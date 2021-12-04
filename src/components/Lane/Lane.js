@@ -15,6 +15,16 @@ const LaneWrapper = styled.div`
   border-radius: 20px;
   min-height: 50vh;
   width: 290px;
+
+  @media (max-width: 1200px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:nth-child(n + 3) {
+      order: 2;
+    }
+  }
 `;
 
 const Title = styled.h2`

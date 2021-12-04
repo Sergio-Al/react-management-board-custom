@@ -5,13 +5,23 @@ import Lane from "../components/Lane/Lane";
 
 const BoardWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   flex-direction: row;
   margin: 0 auto;
-  max-width: 1241px;
+  max-width: 1241px;  
+
+  @media (max-width: 1200px) {
+    &:before {
+      content: "";
+      width: 100%;
+      order: 1;
+    }
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 

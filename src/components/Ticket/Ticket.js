@@ -3,11 +3,18 @@ import styled from "styled-components";
 
 const TicketWrapper = styled.div`
   background: linear-gradient(308.71deg, #ffec3e 25.34%, #fff59f 91.16%);
+  width: ${(props) => (!!props.noLane ? "238px" : "auto")};
   padding: 1px 20px 20px 20px;
 
   &:not(:last-child) {
     margin-bottom: 5%;
     margin-right: ${(props) => (!!props.marginRight ? "1%" : 0)};
+  }
+
+  @media (max-width: 1200px) {
+    &:nth-child(n + 3) {
+      order: 2;
+    }
   }
 `;
 
@@ -31,12 +38,13 @@ const Body = styled.p`
   line-height: 18px;
 `;
 
-export default function Ticket({ marginRight, onDragStart, ticket }) {
+export default function Ticket({ marginRight, onDragStart, ticket, noLane }) {
   return (
     <TicketWrapper
       draggable
       onDragStart={(e) => onDragStart && onDragStart(e, ticket.id)}
       marginRight={marginRight}
+      noLane={noLane}
     >
       <Title>{ticket.title}</Title>
       <Body>{ticket.body}</Body>
