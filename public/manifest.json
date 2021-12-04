@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Management-board app",
+  "name": "A project that manages task in lanes",
   "icons": [
     {
       "src": "favicon.ico",
